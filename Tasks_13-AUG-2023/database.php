@@ -6,7 +6,13 @@ $password = "";
 $dbname = "university";
 
 // Create connection
-$conn =mysqli_connect($servername, $username, $password,$dbname);
+$conn = mysqli_connect($servername, $username, $password,$dbname);
+
+// Create connection PDO
+// $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+
+//Sett Attribute
+// $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 // Check connection
 if (!$conn) { //This checks if there was an error while connecting to the database.

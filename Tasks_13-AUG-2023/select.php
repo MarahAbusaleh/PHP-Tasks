@@ -1,7 +1,15 @@
 <?php
 
 include('./database.php');
+
 $result = mysqli_query($conn, "SELECT * FROM students");
+
+// //PDO
+// $result = $conn->prepare("SELECT * FROM students");
+// $result-> execute();
+
+// //Converte to Array
+// $result2 = $result->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 
@@ -14,15 +22,6 @@ $result = mysqli_query($conn, "SELECT * FROM students");
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nicecss@2.1.0/dist/nice.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <head>
-<style>
-    th {
-        background-color: #f2f2f2;
-    }
-
-    tr:hover {
-        background-color: #f5f5f5;
-    }
-</style>
 </head>
 <body>
 
@@ -51,8 +50,7 @@ if( mysqli_num_rows($result) > 0){
 
 <?php
 
-$i = 0;
-
+//while($result2)
 while($record = mysqli_fetch_array($result)){
 ?>
     
@@ -68,7 +66,7 @@ while($record = mysqli_fetch_array($result)){
         </tr>
 <?php
 
-$i++;
+// $i++;
 }
 
 ?>

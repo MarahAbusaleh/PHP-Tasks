@@ -11,6 +11,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $sql = "INSERT INTO students (student_name, age, student_email) VALUES ('$name', '$age', '$email')";
 
+    // //PDO
+    // $result = $conn->prepare("INSERT INTO students (student_name, age, student_email) VALUES (:ame, :age, :email)");
+    // $result ->bindParam(':student_id' , $_GET['student_id']);
+    // $result ->bindParam(':name' , $name);
+    // $result ->bindParam(':email' , $email);
+    // $result ->bindParam(':age' , $age);
+    // $result-> execute();
 
     if (mysqli_query($conn, $sql)) { 
         // echo "<h1>New Record Inserted successfully!</h1><br>";

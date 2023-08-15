@@ -21,8 +21,18 @@ if(count($_POST) > 0){
     }
 }
 
+//PDO
+// $result = $conn->prepare("SELECT * FROM students WHERE student_id = :student_id");
+// $result ->bindParam(':student_id' , . $_GET['student_id']);
+
+// $result-> execute();
+
+// //Converte to Array
+// $result2 = $result->fetchAll(PDO::FETCH_ASSOC);
+
 $result = mysqli_query($conn, "SELECT * FROM students WHERE student_id = '" . $_GET['student_id'] . "' ");
-$record = mysqli_fetch_array($result)
+$record = mysqli_fetch_array($result);
+
 ?>
 
 <!DOCTYPE html>
@@ -109,7 +119,7 @@ $record = mysqli_fetch_array($result)
 <div class="form-container">
     <form method="post" action="">
 
-        
+        <!-- $result2 -->
         <div class="form-input">
             <label for="name" class="form-label">ID</label>
             <input type="hidden" id="student_id" name="student_id" value="<?php echo $record["student_id"]; ?>" required>
@@ -117,7 +127,8 @@ $record = mysqli_fetch_array($result)
         </div>
         <div class="form-input">
             <label for="name" class="form-label">Name</label>
-            <input type="text" id="name" name="name" value="<?php echo $record["student_name"]; ?>" required>
+            <input type="text" id="name" name="nam.0
+            .0e" value="<?php echo $record["student_name"]; ?>" required>
         </div>
         <div class="form-input">
             <label for="email" class="form-label">Email</label>
